@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Importing the Montserrat font to be used across the page */
+
+/* Applying Montserrat font to all elements */
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Styling the main body */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling the header section */
+header {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styling for the film search form */
+.searchFilm_form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Input field for film search */
+.searchFilm_input {
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    box-shadow: rgba(105, 105, 105, 0.6) 0 0 7px; /* Adds shadow around input */
+}
+
+/* Container for auto-suggested results */
+.search {
+    width: 50%;
+    position: relative; /* Needed for absolute positioning inside */
+}
+
+/* Styling the auto-suggest dropdown */
+.auto-suggest {
+    margin: 0;
+    padding: 0;
+    position: absolute; /* Positions dropdown under input */
+    width: 100%;
+    list-style: none;
+}
+
+.auto-suggest li {
+    width: 100%;
+    background: #cecece;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.auto-suggest li:hover {
+    background: #ababab; /* Changes color when hovering */
+}
+
+/* Styling for the search button */
+.searchFilm_btn {
+    font-size: 16px;
+    padding: 7px 25px;
+    border: 1px solid #696969;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #333;
+    margin-left: 10px;
+}
+
+/* Styling for the 'Your Favorites' button */
+.yourFavoritesBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px !important;
+    padding: 10px 30px;
+    margin-top: 20px;
+}
+
+.yourFavoritesBtn svg {
+    inline-size: 20px; /* Sets icon size */
+}
+
+/* Styling the container for sort buttons */
+.sort-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+}
+
+/* Styling each sort button */
+.sort-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background: #fff;
+    color: #000;
+    transition: background 0.3s; /* Smooth color transition */
+}
+
+.sort-button.active {
+    background: #000;
+    color: #fff; /* Changes color when active */
+}
+
+.sort-button:hover {
+    background: #000;
+    color: #fff; /* Changes color on hover */
+}
+
+/* Main content container */
+.container {
+    width: 80%;
+}
+
+/* Grid layout for displaying films */
+.content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns */
+    gap: 20px; /* Space between film cards */
+}
+
+.film-card {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 2px solid #000;
+    padding: 10px;
+}
+
+.card-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover; /* Keeps image proportionate */
+    border-radius: 10px;
+}
+
+/* Film image in the card */
+.film-img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Button container within film card */
+.card-buttons {
+    margin-top: auto;
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    position: relative;
+}
+
+/* Styling for film information text */
+.film-information {
+    margin-bottom: 20px;
+}
+
+.film-info-text {
+    margin: 0; /* Removes extra space */
+}
+
+/* General button styling */
+.btn {
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background: #000;
+    color: #fff;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.show-btn {
+    flex: 9; /* Makes button wider */
+    padding: 7px 0;
+}
+
+/* Favorite button styling */
+.favorite-btn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
+
+.favorite-btn svg {
+    transition: 0.1s;
+    inline-size: 20px;
+}
+
+.favorite-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+/* Favorite button color when checked */
+.favorite-checkbox:checked + .favorite-btn {
+    color: red;
+}
+
+/* Backdrop for modals */
+::backdrop {
+    background-image: linear-gradient(90deg, #000, #000);
+    opacity: 0.5; /* Darkens background */
+}
+
+/* Styling for film titles */
+.film-title {
+    margin: 0;
+}
+
+/* Styling for ingredients in lists */
+.ingredients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.ingredients .ingredient {
+    border-radius: 10px;
+    border: 1px solid #000;
+    padding: 5px 10px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+}
+
+table, thead, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px 30px;
+    font-weight: normal;
+}
+
+/* Button styling for adding to favorites */
+.add-to-fav-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 0;
+}
+
+/* Icon color change on hover */
+.add-to-fav-btn:hover svg {
+    fill: palevioletred;
+}
+
+/* Modal content styling */
+.film-modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Layout for film information in modals */
+.about-film {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Styling for film image and button in modal */
+.film-img-btn {
+    width: 300px;
+}
+
+/* Styling for film information in modal */
+.film-info {
+    width: 700px;
+}
+
+.film-info .film-name {
+    margin: 10px 0;
+    font-size: 26px; /* Larger font for title */
+}
+
+/* Rating block styling */
+.film-info .rating-block {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Circle styling for film rating */
+.film-info .rating-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    color: #fff;
+}
+
+/* Font size for runtime text */
+.runtime-text {
+    font-size: 18px;
+}
+
+/* Styling for cast and crew sections */
+.castOrCrew {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Actor image in cast section */
+.actor-img {
+    width: 150px;
+    height: 225px;
+}
+
+.actor-card h4, p {
+    margin: 0;
+}
+
+.actor-card p {
+    font-size: 12px;
+}
+
+/* Styling for loading spinner animation */
+.loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #000;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite; /* Spin animation */
+    z-index: 1000;
+}
+
+/* Keyframes for spinner rotation */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+

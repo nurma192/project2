@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Film App</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header section with search form and favorites button -->
+<header class="header">
+	<div class="searchFilm_form">
+		<div class="search">
+			<!-- Input field for searching films by name -->
+			<input class="searchFilm_input" type="text" placeholder="Film Name">
+			<!-- List for auto-suggestions below input field -->
+			<ul class="auto-suggest" id="autoSuggest"></ul>
+		</div>
+		<!-- Button to trigger search action -->
+		<button class="searchFilm_btn" type="submit">Search</button>
+	</div>
+	<!-- Button to show user's favorite films -->
+	<button class="btn yourFavoritesBtn" onclick="showFavorites()">
+		Your Favorites
+	</button>
+</header>
+
+
+<!-- Dialog box to display detailed film information -->
+<dialog id="film-info"></dialog>
+
+<div class="container">
+	<h1 class="searchTitle"></h1>
+	<div class="sort-buttons">
+		<!-- Sorting buttons for film results -->
+		<button id="sortByPopular" class="sort-button">Popular</button>
+		<button id="sortByDate" class="sort-button">Date</button>
+		<button id="sortByRating" class="sort-button">Rating</button>
+	</div>
+	<!-- Container for film results -->
+	<div class="content"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

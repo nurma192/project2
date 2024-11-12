@@ -1,0 +1,217 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/*font-family: "Montserrat", sans-serif;*/
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+*{
+    font-family: "Montserrat", sans-serif;
+}
+header{
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.searchRecipe_form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.searchRecipe_input{
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    box-shadow: rgba(105, 105, 105, 0.6) 0 0 7px;
+}
+.search{
+    width: 50%;
+    position: relative;
+}
+.auto-suggest{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    list-style: none;
+}
+.auto-suggest li {
+    width: 100%;
+    background: #cecece;
+    padding: 10px;
+    cursor: pointer;
+}
+.auto-suggest li:hover{
+    background: #ababab;
+}
+.searchRecipe_btn{
+    font-size: 16px;
+    padding: 7px 25px;
+    border:1px solid #696969;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #333;
+    margin-left: 10px;
+}
+.yourFavoritesBtn{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px !important;
+    padding: 10px 30px;
+    margin-top: 20px
+}
+.yourFavoritesBtn svg{
+    inline-size: 20px;
+}
+
+.container{
+    width: 80%;
+}
+.content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.recipe-card{
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 2px solid #000;
+    padding: 10px;
+    height: auto;
+}
+.card-img{
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.recipe-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.card-buttons{
+    margin-top: auto;
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    position: relative;
+}
+.btn{
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border:1px solid #000000;
+    border-radius: 4px;
+    background: #000;
+    color: #fff;
+    transition: background 0.3s;
+}
+.btn:hover{
+    background: #fff;
+    color: #000;
+}
+
+.show-btn{
+    flex: 9;
+}
+.favorite-btn{
+    flex: 1;
+}
+.favorite-btn svg{
+    transition: 0.1s;
+    inline-size: 20px;
+}
+.favorite-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
+.favorite-checkbox{
+    position: absolute;
+    visibility: hidden;
+}
+
+.favorite-checkbox:checked + .favorite-btn {
+    color: red;
+}
+
+
+::backdrop {
+    background-image: linear-gradient(
+            90deg,
+            #000,
+            #000
+    );
+    opacity: 0.5;
+}
+
+.recipe-info{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.info-img{
+    width: 100%;
+}
+.recipe-title{
+    margin: 0;
+}
+.ingredients{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+.ingredients .ingredient{
+    border-radius: 10px;
+    border: 1px solid #000;
+    padding: 5px 10px;
+}
+
+thead th, td{
+    font-weight: bold;
+}
+table{
+    width: 100%;
+}
+table, thead, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px 30px;
+    font-weight: normal;
+}
+.add-to-fav-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 0;
+}
+
+.add-to-fav-btn svg{
+    transition: 0.1s;
+    inline-size: 20px;
+}
+.add-to-fav-btn:hover svg{
+    fill: palevioletred;
+}
+.remove-from-fav-btn{
+
+}
+

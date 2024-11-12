@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weather App</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+	<div class="search-form">
+		<div class="search">
+			<input class="search-input" type="text" placeholder="City Name" id="city-search">
+			<ul class="auto-suggest" id="autoSuggest"></ul>
+		</div>
+		<button class="search-btn" type="button">Search</button>
+	</div>
+	<button class="btn yourLocationBtn" id="location-btn">Use My Location</button>
+</header>
+
+<div class="loading-spinner hidden" id="loading-spinner"></div>
+
+<div class="container">
+	<div class="content">
+		<section class="current-weather hidden" id="current-weather-section">
+			<h2 id="location-name">City Name</h2>
+			<div class="weather-info">
+				<img id="weather-icon" src="" alt="Weather Icon" class="weather-icon">
+				<p id="weather-description">Sunny</p>
+				<p id="temperature">20°C</p>
+				<p id="humidity">Humidity: 60%</p>
+				<p id="wind-speed">Wind Speed: 5 m/s</p>
+			</div>
+			<button id="toggle-unit" class="toggle-btn">Toggle °C / °F</button>
+		</section>
+
+		<section class="forecast hidden" id="forecast-section">
+			<h3 class="title">5-Day Forecast</h3>
+			<div class="forecast-container" id="forecast-container"></div>
+		</section>
+	</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

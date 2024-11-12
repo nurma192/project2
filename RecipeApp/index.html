@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Recipe App</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+	<div class="searchRecipe_form">
+		<div class="search">
+			<input class="searchRecipe_input" type="text" placeholder="Recipe Name">
+			<ul class="auto-suggest" id="autoSuggest">
+
+			</ul>
+		</div>
+		<button class="searchRecipe_btn" type="submit" >Search</button>
+	</div>
+	<button class="btn yourFavoritesBtn" onclick="showFavorites()">
+		Your Favorites
+		<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+	</button>
+</header>
+
+<dialog id="recipe-info" >
+
+</dialog>
+
+<div class="container">
+	<h1 class="searchTitle"></h1>
+	<div class="content">
+
+	</div>
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

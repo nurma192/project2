@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+.header {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 18px;
+    box-shadow: rgba(105, 105, 105, 0.6) 0 0 7px;
+}
+
+.search {
+    width: 50%;
+    position: relative;
+}
+
+.auto-suggest {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    list-style: none;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.auto-suggest li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.auto-suggest li:hover {
+    background: #e0e0e0;
+}
+
+.search-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.yourLocationBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.yourLocationBtn svg{
+    inline-size: 25px;
+}
+
+.yourLocationBtn:hover {
+    background-color: #218838;
+}
+
+.container {
+    width: 80%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.current-weather {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.current-weather h2 {
+    font-size: 1.8em;
+}
+
+.weather-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.weather-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.toggle-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.toggle-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.forecast {
+    width: 100%;
+    text-align: center;
+}
+.forecast .title {
+    margin: 10px 0;
+}
+
+.forecast-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.forecast-card {
+    background: #ffffff;
+    width: 18%;
+    border-radius: 8px;
+    padding: 10px;
+    /*box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;*/
+    text-align: center;
+    border: 2px solid #000;
+}
+
+.forecast-card img {
+    width: 40px;
+    height: 40px;
+    margin: 10px 0;
+}
+
+.forecast-card .date {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.forecast-card .description {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.forecast-card .temp-high, .forecast-card .temp-low {
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+
+.loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #000;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    z-index: 1000;
+}
+
+/* Анимация для спиннера */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
